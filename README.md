@@ -10,10 +10,10 @@ You need just add the paper title(s) in a json file `references.json` like the f
 [
     ...
     [
-        "", # keep an empty string
+        "", # keep an empty string for a newly-added title; will be filled by get_bib.py
         "Improved baselines with visual instruction tuning"
     ],
     ...
 ]
 ```
-Then, simply run `python get_bib.py`. This will automatically add bibtex citations from Google Scholar to your bib file `egbib.bib`. Those that have been added will not be processed again.
+Then, simply run `python get_bib.py`. This will automatically add bibtex citations from Google Scholar to your bib file `egbib.bib`, and filling the empty string with the citaion key. Those that have been added will not be processed again.
