@@ -2,7 +2,7 @@ from scholarly import scholarly
 import bibtexparser
 import json
 import string
-
+import time
 
 def get_bibtex_citation(paper_title):
     # 搜索论文
@@ -44,7 +44,7 @@ def extract_keys_and_titles_from_bib(bib_file_path):
 
 
 if __name__ == "__main__":
-    bib_file_path = "egbib.bib"
+    bib_file_path = "main.bib"
     references_path = "references.json"
     
     with open(references_path, "r") as f:
@@ -58,7 +58,8 @@ if __name__ == "__main__":
             bib_id = bibtexparser.loads(bibtex_str).entries[0]['ID']
             ref[0] = bib_id
             f_bib.writelines(bibtex_str)
+            time.sleep(0.1)
+            with open(references_path, "w") as f:
+                json.dump(references, f, indent=4, ensure_ascii=False)
 
     f_bib.close()
-    with open(references_path, "w") as f:
-        json.dump(references, f, indent=4, ensure_ascii=False)
