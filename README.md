@@ -16,4 +16,5 @@ You need just add the paper title(s) in a json file `references.json` like the f
     ...
 ]
 ```
-Then, simply run `python get_bib.py`. This will automatically add bibtex citations from Google Scholar to your bib file `egbib.bib`, and filling the empty string with the citaion key. Those that have been added will not be processed again.
+Then, simply run `python get_bib.py`. This will automatically add bibtex citations from Google Scholar to your bib file `main.bib`, and filling the empty string with the citaion key. Those that have been added will not be processed again.
+Warning: something wrong with network connection may lead to error!
